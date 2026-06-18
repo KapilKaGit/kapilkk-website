@@ -1,166 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kapil Khatri — Brutalist Personal Site</title>
-  <meta name="description" content="A premium brutalist personal website for Kapil Khatri with an editorial visual experience and a dedicated terminal for personal details, projects, skills, contact, resume, and timeline.">
-  <meta name="author" content="Kapil Khatri">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Kapil Khatri — Brutalist Personal Site">
-  <meta property="og:description" content="Bold editorial personal site with interactive archive features and a polished control-room terminal.">
-  <meta property="og:image" content="./a.jpeg">
-  <meta property="og:url" content="https://kapilkk.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kapil Khatri — Brutalist Personal Site">
-  <meta name="twitter:description" content="A raw, modern, high-contrast personal site with terminal-only personal details and projects.">
-  <meta name="twitter:image" content="./a.jpeg">
-  <link rel="icon" type="image/jpeg" href="./a.jpeg">
-  <link rel="apple-touch-icon" href="./a.jpeg">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapil.OS</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0a0a0a;
+    color:white;
+    font-family:Arial, sans-serif;
+}
+
+header{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+h1{
+    font-size:5rem;
+    letter-spacing:5px;
+}
+
+p{
+    margin-top:15px;
+    color:#ccc;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    background:red;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+section{
+    padding:80px 10%;
+}
+
+.card{
+    background:#111;
+    border:1px solid #333;
+    padding:20px;
+    margin-top:20px;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid #222;
+}
+</style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="grain" aria-hidden="true"></div>
-  <div class="memory-flash" id="memory-flash" aria-hidden="true">TUNING THE ARCHIVE</div>
 
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Kapil Khatri home"><span></span> KAPIL/KK</a>
-    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation"><span></span><span></span></button>
-    <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
-      <a href="#home" class="active">Home</a>
-      <a href="#story">About / Story</a>
-      <a href="#project-index">Projects</a>
-      <a href="#terminal">Terminal</a>
-      <a href="#archive">Archive / Memory</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+    <h1>KAPIL.OS</h1>
+    <p>Linux Developer • Builder • Explorer</p>
 
-  <main id="main-content">
-    <section class="hero section-panel" id="home" aria-labelledby="hero-title">
-      <div class="hero-copy reveal">
-        <p class="kicker">Personal site / brutalist issue no. 01</p>
-        <h1 id="hero-title" data-scramble="Kapil Khatri">Kapil Khatri</h1>
-        <p class="tagline">Linux-minded builder. Raw interfaces. Sharp systems.</p>
-        <p class="intro">A split experience: the page is a loud editorial surface, while the control-room terminal holds the personal details, projects, skills, contact, resume, and timeline.</p>
-        <div class="hero-actions">
-          <a class="btn btn-red" href="#terminal">Open Terminal</a>
-          <button class="btn" id="surprise-btn" type="button">Surprise Me</button>
-          <button class="btn" id="archive-btn" type="button">Random Internet Memory</button>
-        </div>
-      </div>
+    <button onclick="scrollToSection()">
+        Enter System
+    </button>
+</header>
 
-      <div class="hero-collage reveal" aria-label="Brutalist collage centerpiece">
-        <div class="red-block parallax-item" data-parallax="0.035"></div>
-        <figure class="photo-slab parallax-item" data-parallax="-0.025">
-          <img src="./a.jpeg" alt="Cropped high-contrast portrait collage used as the visual centerpiece">
-        </figure>
-        <div class="type-slab">CONTROL<br>ROOM</div>
-        <p class="vertical-note">BLACK / WHITE / RED / NO SOFT EDGES</p>
-      </div>
-    </section>
+<section id="about">
+    <h2>About</h2>
 
-    <section class="marquee" aria-hidden="true"><span>MODERN BUT RAW • INDUSTRIAL MEMORY • MAGAZINE GRID • INTERNET ARCHAEOLOGY • </span></section>
+    <div class="card">
+        <p>
+            Welcome to my digital space.
+            I enjoy Linux, programming, building projects,
+            and exploring new ideas.
+        </p>
+    </div>
+</section>
 
-    <section class="section-panel story" id="story" aria-labelledby="story-title">
-      <header class="section-header reveal">
-        <p>01 / About / Story</p>
-        <h2 id="story-title">A visual story wall, not a résumé dump.</h2>
-      </header>
-      <div class="story-grid">
-        <article class="story-poster reveal">
-          <span class="poster-number">199X—NOW</span>
-          <h3>Build taste. Break defaults. Keep learning.</h3>
-          <p>This surface is intentionally atmospheric: fragments, direction, and mood live here. Exact personal details are deliberately reserved for the terminal.</p>
-        </article>
-        <article class="memory-timeline reveal" aria-label="Memory timeline">
-          <div><strong>Origin</strong><span>engineering curiosity</span></div>
-          <div><strong>Practice</strong><span>daily systems thinking</span></div>
-          <div><strong>Now</strong><span>raw web + Linux energy</span></div>
-          <div><strong>Next</strong><span>deeper technical craft</span></div>
-        </article>
-      </div>
-    </section>
+<section>
+    <h2>Projects</h2>
 
-    <section class="section-panel project-index" id="project-index" aria-labelledby="project-index-title">
-      <header class="section-header reveal">
-        <p>02 / Projects</p>
-        <h2 id="project-index-title">Projects are locked in the terminal.</h2>
-      </header>
-      <div class="project-teaser reveal">
-        <p>Use the command center for the real project list. This outside section stays visual: a directory cover, an index card, a warning label.</p>
-        <a class="btn btn-red" href="#terminal" data-terminal-command="projects">Run projects</a>
-      </div>
-    </section>
+    <div class="card">
+        <h3>Personal Website</h3>
+        <p>My portfolio and experiments.</p>
+    </div>
 
-    <section class="section-panel terminal-section" id="terminal" aria-labelledby="terminal-title">
-      <header class="section-header reveal">
-        <p>03 / Terminal</p>
-        <h2 id="terminal-title">Control room for personal details only.</h2>
-      </header>
-      <article class="terminal-shell reveal" aria-label="Interactive terminal containing personal details and projects">
-        <div class="terminal-topbar">
-          <div class="lights" aria-hidden="true"><span></span><span></span><span></span></div>
-          <button class="terminal-toggle" id="terminal-toggle" type="button" aria-expanded="true">Close</button>
-        </div>
-        <div class="terminal-body" id="terminal-body">
-          <div class="terminal-output" id="terminal-output" aria-live="polite"></div>
-          <form class="terminal-form" id="terminal-form" autocomplete="off">
-            <label class="sr-only" for="terminal-input">Terminal command</label>
-            <span class="prompt">kapil@website:~$</span>
-            <input id="terminal-input" name="terminal-input" type="text" spellcheck="false" aria-label="Type a terminal command">
-            <span class="cursor" aria-hidden="true"></span>
-          </form>
-          <p class="terminal-hint">Commands: help, about, projects, skills, contact, resume, timeline, clear</p>
-        </div>
-      </article>
-    </section>
+    <div class="card">
+        <h3>Future Project</h3>
+        <p>Coming soon...</p>
+    </div>
+</section>
 
-    <section class="section-panel archive" id="archive" aria-labelledby="archive-title">
-      <header class="section-header reveal">
-        <p>04 / Archive / Memory</p>
-        <h2 id="archive-title">Pinned thoughts from the underground feed.</h2>
-      </header>
-      <div class="archive-grid">
-        <button class="archive-card reveal" type="button">Save strange links before they disappear.</button>
-        <button class="archive-card reveal" type="button">Good interfaces feel like printed objects.</button>
-        <button class="archive-card reveal egg-trigger" type="button">Click the red square three times.</button>
-        <button class="archive-card reveal" type="button">The web should still feel discoverable.</button>
-      </div>
-    </section>
+<section>
+    <h2>Contact</h2>
 
-    <section class="section-panel goals" id="goals" aria-labelledby="goals-title">
-      <header class="section-header reveal">
-        <p>05 / Bucket list</p>
-        <h2 id="goals-title">Life goals, written like wall labels.</h2>
-      </header>
-      <ul class="goal-list reveal">
-        <li>Ship useful tools.</li>
-        <li>Master hard fundamentals.</li>
-        <li>Build a memorable digital home.</li>
-        <li>Keep the internet weird.</li>
-      </ul>
-    </section>
+    <div class="card">
+        Email: kapilkaacc@gmail.com
+    </div>
+</section>
 
-    <section class="section-panel contact" id="contact" aria-labelledby="contact-title">
-      <header class="section-header reveal">
-        <p>06 / Contact</p>
-        <h2 id="contact-title">Say hello through the terminal.</h2>
-      </header>
-      <div class="contact-poster reveal">
-        <p>Contact details are available inside the terminal with <code>contact</code>. This keeps the split experience clean.</p>
-        <a class="btn btn-red" href="#terminal" data-terminal-command="contact">Run contact</a>
-      </div>
-    </section>
-  </main>
+<footer>
+    © 2026 Kapil Khatri
+</footer>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Kapil Khatri</p>
-    <a href="#home">Back to top</a>
-  </footer>
+<script>
+function scrollToSection(){
+    document.getElementById("about")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+}
+</script>
 
-  <div class="easter-egg" id="easter-egg" role="status" aria-live="polite">EASTER EGG: BRUTAL MODE UNLOCKED.</div>
-  <script src="script.js"></script>
 </body>
 </html>
