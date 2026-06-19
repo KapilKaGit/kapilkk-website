@@ -1,73 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kapil Archive :: Personal Knowledge Vault</title>
-<style>
-:root{--bg:#e8dfc8;--panel:#f3ead2;--panel2:#e4d7b8;--border:#8b7b55;--text:#2b2418;--link:#0000EE;--heading:#8b2e2e;--muted:#665a40;--input:#fff9e8;--shadow:rgba(58,43,18,.22);--ok:#2f6f2f}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 "Courier New",Courier,monospace}body.dark{--bg:#0a0a0a;--panel:#151515;--panel2:#101f10;--border:#3a3a3a;--text:#d7d7d7;--link:#7cb9ff;--heading:#7fdc7f;--muted:#a6a6a6;--input:#050505;--shadow:rgba(127,220,127,.08);--ok:#7fdc7f;background-image:radial-gradient(circle at 50% 0,rgba(127,220,127,.08),transparent 38%),repeating-linear-gradient(0deg,rgba(255,255,255,.025),rgba(255,255,255,.025) 1px,transparent 1px,transparent 4px)}a{color:var(--link)}a:hover{background:var(--link);color:var(--panel)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--heading)}body.dark h1,body.dark h2,body.dark h3{font-family:"Courier New",Courier,monospace;letter-spacing:.04em}.page{max-width:1180px;margin:0 auto;padding:12px}.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--panel);border:2px solid var(--border);padding:8px;z-index:9}.topbar,.box,.footer{background:var(--panel);border:1px solid var(--border);box-shadow:3px 3px 0 var(--shadow)}.topbar{padding:10px;margin-bottom:10px}.brand-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}.logo{margin:0;font-size:42px;line-height:1;letter-spacing:4px}.subtitle{margin:4px 0 0;color:var(--muted);font-size:14px}.utility{display:flex;gap:7px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.counter,.button{border:1px solid var(--border);background:var(--panel2);color:var(--text);padding:5px 8px;font:inherit}.button{cursor:pointer}.button:active{transform:translate(1px,1px)}.search-row{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}.search-row input{width:100%;background:var(--input);color:var(--text);border:2px inset var(--border);font:17px "Courier New",Courier,monospace;padding:8px}.layout{display:grid;grid-template-columns:230px 1fr;gap:10px}.box{margin-bottom:10px}.box h2,.box h3{font-size:19px;margin:0;padding:5px 8px;background:var(--panel2);border-bottom:1px solid var(--border)}.box-content{padding:9px}.directory-title{font-weight:bold}.rule{border-top:1px dashed var(--border);margin:4px 0 7px}.tree{list-style:none;margin:0;padding:0}.tree a{display:block;padding:5px 4px;text-decoration:none;border-bottom:1px dotted var(--border)}.tree a::before{content:"+ ";color:var(--heading);font-weight:bold}.tree a.active{background:var(--panel2);font-weight:bold}.ascii{white-space:pre;overflow:auto;color:var(--ok);font-size:12px}.main-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:10px}.item{padding:8px 4px;border-bottom:1px dotted var(--border)}.item:last-child{border-bottom:0}.file-icon{font-size:18px}.meta{color:var(--muted);font-size:13px}.tags{margin-top:3px}.tag{display:inline-block;border:1px solid var(--border);background:var(--panel2);padding:1px 5px;margin:2px;color:var(--text);font-size:12px}table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--border);padding:6px;vertical-align:top}th{background:var(--panel2);color:var(--heading)}.table-wrap{overflow:auto}.listing{list-style:none;padding:0;margin:0}.listing li{display:grid;grid-template-columns:24px 1fr auto;gap:6px;border-bottom:1px dotted var(--border);padding:5px 0}.empty,.error{border:1px dashed var(--border);padding:10px;background:rgba(255,255,255,.15)}.error{color:var(--heading)}.footer{text-align:center;padding:10px;margin-top:10px}.noscript{border:2px solid var(--heading);padding:10px;margin-bottom:10px;background:var(--panel)}@media(max-width:820px){.brand-row,.layout,.main-grid,.search-row{grid-template-columns:1fr}.logo{font-size:31px}.utility{justify-content:flex-start}.listing li{grid-template-columns:24px 1fr}.listing .meta-right{grid-column:2}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kapil's personal website for projects, learning notes, and ways to connect." />
+  <title>Kapil K · Portfolio</title>
+  <style>
+    :root {
+      --bg: #0c1022;
+      --bg-soft: #121832;
+      --card: rgba(255, 255, 255, 0.08);
+      --card-strong: rgba(255, 255, 255, 0.13);
+      --text: #f7f8ff;
+      --muted: #b8c1dd;
+      --brand: #7c5cff;
+      --brand-2: #28d7a4;
+      --accent: #ffca58;
+      --line: rgba(255, 255, 255, 0.16);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124, 92, 255, 0.42), transparent 34rem),
+        radial-gradient(circle at 82% 18%, rgba(40, 215, 164, 0.24), transparent 28rem),
+        linear-gradient(135deg, #0b1022 0%, #11172d 48%, #080b16 100%);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .page { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(12, 16, 34, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.03em; }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 14px 36px rgba(124, 92, 255, 0.36);
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); padding: 10px 12px; border-radius: 999px; font-weight: 650; font-size: 0.94rem; }
+    .nav-links a:hover { color: var(--text); background: var(--card); }
+
+    .hero { padding: 86px 0 58px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 54px; align-items: center; }
+    .eyebrow { color: var(--brand-2); font-weight: 800; text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.78rem; }
+    h1 { margin: 14px 0 18px; font-size: clamp(3rem, 8vw, 6.8rem); line-height: 0.92; letter-spacing: -0.08em; }
+    .lead { color: var(--muted); font-size: clamp(1.08rem, 2.2vw, 1.35rem); line-height: 1.65; max-width: 680px; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 48px; padding: 0 20px; border-radius: 999px;
+      border: 1px solid var(--line); font-weight: 800;
+      background: var(--card); color: var(--text);
+      transition: transform 180ms ease, background 180ms ease, border 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); background: var(--card-strong); border-color: rgba(255,255,255,.3); }
+    .button.primary { background: linear-gradient(135deg, var(--brand), #5d8cff); border: 0; box-shadow: 0 18px 44px rgba(124, 92, 255, 0.34); }
+
+    .profile-card {
+      position: relative;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.06));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .profile-card::before { content: ""; position: absolute; inset: -40% auto auto -30%; width: 260px; height: 260px; border-radius: 50%; background: rgba(255, 202, 88, .2); filter: blur(24px); }
+    .portrait { position: relative; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 26px; width: 100%; border: 1px solid var(--line); }
+    .status {
+      position: absolute; left: 34px; right: 34px; bottom: 34px;
+      padding: 14px 16px; border-radius: 20px;
+      background: rgba(8, 11, 22, 0.78); backdrop-filter: blur(14px);
+      border: 1px solid var(--line); color: var(--muted); font-weight: 700;
+    }
+    .dot { display: inline-block; width: 9px; height: 9px; margin-right: 8px; border-radius: 50%; background: var(--brand-2); box-shadow: 0 0 0 7px rgba(40,215,164,.12); }
+
+    section { padding: 46px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 22px; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1; letter-spacing: -0.055em; }
+    .section-head p { color: var(--muted); max-width: 520px; line-height: 1.65; margin: 0; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      border: 1px solid var(--line); border-radius: 28px; padding: 24px;
+      background: var(--card); box-shadow: 0 16px 46px rgba(0,0,0,.18);
+    }
+    .card h3 { margin: 0 0 10px; font-size: 1.25rem; }
+    .card p { color: var(--muted); line-height: 1.65; margin: 0; }
+    .icon { width: 44px; height: 44px; border-radius: 15px; display: grid; place-items: center; margin-bottom: 18px; background: var(--card-strong); }
+
+    .project { grid-column: span 1; min-height: 260px; display: flex; flex-direction: column; justify-content: space-between; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .tag { color: #dce4ff; border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; font-size: .82rem; font-weight: 750; background: rgba(255,255,255,.05); }
+
+    .contact {
+      text-align: center; padding: 46px; border-radius: 34px;
+      border: 1px solid var(--line); background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(40,215,164,.12));
+      box-shadow: var(--shadow);
+    }
+    .contact p { color: var(--muted); line-height: 1.7; max-width: 650px; margin: 16px auto 0; }
+
+    footer { color: var(--muted); padding: 34px 0 46px; text-align: center; }
+
+    @media (max-width: 860px) {
+      .nav-inner, .section-head { align-items: flex-start; flex-direction: column; }
+      .hero { grid-template-columns: 1fr; padding-top: 54px; }
+      .grid { grid-template-columns: 1fr; }
+      .profile-card { max-width: 460px; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip" href="#content">Skip to archive</a>
-<div class="page">
-<header class="topbar">
-  <div class="brand-row">
-    <div><h1 class="logo">KAPIL ARCHIVE</h1><p class="subtitle">Personal knowledge vault</p></div>
-    <div class="utility"><span class="counter">Total archive count: <strong id="total-count">0</strong></span><button class="button" id="theme-toggle" type="button">Dark mode</button></div>
-  </div>
-  <form class="search-row" id="search-form"><input id="search" type="search" autocomplete="off" placeholder="Search filename, title, tags, category..." aria-label="Search archive"><button class="button" type="submit">Search</button></form>
-</header>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="page nav-inner">
+      <a class="brand" href="#top" aria-label="Kapil K home"><span class="brand-mark">K</span><span>Kapil K</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-<div class="layout">
-<aside class="sidebar">
-  <section class="box"><h2>Directories</h2><div class="box-content"><div class="directory-title">Directories</div><div class="rule"></div><nav><ul class="tree" id="directory-tree"></ul></nav></div></section>
-  <section class="box"><h3>Index Notes</h3><div class="box-content"><p class="meta">Data source: <code>/data/archive.json</code></p><p class="meta">Files resolve to their repository paths.</p></div></section>
-  <section class="box"><h3>Tux</h3><div class="box-content ascii">   .--.
-  |o_o |
-  |:_/ |
- //   \\ \
-(|     | )
-/'\\_   _/`\\
-\\___)=(___/</div></section>
-</aside>
+  <main id="top" class="page">
+    <section class="hero" aria-labelledby="intro-title">
+      <div>
+        <div class="eyebrow">Personal website</div>
+        <h1 id="intro-title">Building useful things for the web.</h1>
+        <p class="lead">Hi, I’m Kapil. This is a clean home for my projects, notes, experiments, and links — designed to feel modern, fast, and easy to browse on any device.</p>
+        <div class="actions">
+          <a class="button primary" href="#work">See my work</a>
+          <a class="button" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="Profile highlight">
+        <img class="portrait" src="a.jpeg" alt="Portrait of Kapil" />
+        <div class="status"><span class="dot"></span>Available for ideas, collaborations, and learning.</div>
+      </aside>
+    </section>
 
-<main id="content">
-  <section class="box"><h2>Recently Added</h2><div class="box-content" id="recently-added"><p class="empty">Loading archive index...</p></div></section>
-  <div class="main-grid">
-    <section class="box"><h2>Latest Uploads</h2><div class="box-content table-wrap" id="latest-uploads"></div></section>
-    <section class="box"><h2>Search Results</h2><div class="box-content" id="search-results"><p class="meta">Type in the search box to search filenames, titles, tags, and categories.</p></div></section>
-  </div>
-  <section class="box"><h2>Browse by Category</h2><div class="box-content" id="browse-category"></div></section>
-</main>
-</div>
-<footer class="footer">Kapil Archive &middot; plain files, stable links, no trackers</footer>
-</div>
-<noscript><div class="page"><div class="noscript">JavaScript is required to load <code>/data/archive.json</code> and render this archive.</div></div></noscript>
-<script>
-const categories=['programming','linux','images','documents','books','videos','projects','misc'];
-const labels={programming:'Programming',linux:'Linux',images:'Images',documents:'Documents',books:'Books',videos:'Videos',projects:'Projects',misc:'Misc'};
-let archive=[];let currentCategory='all';
-const $=id=>document.getElementById(id);
-function esc(v){return String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
-function fileName(item){return item.file?item.file.split('/').pop():item.title}
-function icon(item){const f=(item.file||'').toLowerCase();if(/\.(png|jpe?g|gif|webp|svg)$/.test(f))return'🖼️';if(/\.pdf$/.test(f))return'📕';if(/\.(mp4|webm|mov|mkv)$/.test(f))return'🎞️';if(/\.(zip|tar|gz|7z)$/.test(f))return'📦';return'📄'}
-function tags(item){return (item.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}
-function normalized(item){return [item.title,fileName(item),item.category,(item.tags||[]).join(' ')].join(' ').toLowerCase()}
-function sorted(items){return [...items].sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')))}
-function itemLink(item){return `<a href="${esc(item.file)}">${esc(item.title||fileName(item))}</a>`}
-function renderTree(){ $('directory-tree').innerHTML=['all',...categories].map(c=>`<li><a class="${currentCategory===c?'active':''}" href="?category=${c}">${c==='all'?'All Files':labels[c]}</a></li>`).join('') }
-function renderRecent(items){$('recently-added').innerHTML=items.length?sorted(items).slice(0,5).map(i=>`<div class="item"><span class="file-icon">${icon(i)}</span> ${itemLink(i)}<div class="meta">Added: ${esc(i.date||'undated')} &middot; Category: ${esc(labels[i.category]||i.category||'uncategorized')}</div><div class="tags">${tags(i)}</div></div>`).join(''):'<p class="empty">No archive entries found in /data/archive.json.</p>'}
-function renderLatest(items){$('latest-uploads').innerHTML=items.length?`<table><thead><tr><th>Date</th><th>File</th><th>Category</th></tr></thead><tbody>${sorted(items).slice(0,12).map(i=>`<tr><td>${esc(i.date||'')}</td><td>${icon(i)} ${itemLink(i)}</td><td>${esc(labels[i.category]||i.category||'')}</td></tr>`).join('')}</tbody></table>`:'<p class="empty">No latest uploads to display.</p>'}
-function renderBrowse(items){const groups=categories.map(c=>[c,items.filter(i=>i.category===c)]).filter(([,v])=>v.length);$('browse-category').innerHTML=groups.length?groups.map(([c,v])=>`<h3 id="${c}">${labels[c]}</h3><ul class="listing">${sorted(v).map(i=>`<li><span>${icon(i)}</span><span>${itemLink(i)}<br><span class="meta">${esc(i.title||'')}</span></span><span class="meta meta-right">${esc(i.date||'')}</span></li>`).join('')}</ul>`).join(''):'<p class="empty">No categories contain files yet.</p>'}
-function renderSearch(){const q=$('search').value.trim().toLowerCase();const base=currentCategory==='all'?archive:archive.filter(i=>i.category===currentCategory);const results=q?base.filter(i=>normalized(i).includes(q)):[];$('search-results').innerHTML=q?(results.length?results.map(i=>`<div class="item">${icon(i)} ${itemLink(i)}<div class="meta">${esc(i.date||'')} &middot; ${esc(labels[i.category]||i.category||'')}</div><div class="tags">${tags(i)}</div></div>`).join(''):`<p class="empty">No matches for "${esc(q)}".</p>`):'<p class="meta">Type in the search box to search filenames, titles, tags, and categories.</p>'}
-function render(){const params=new URLSearchParams(location.search);currentCategory=params.get('category')||'all';if(!['all',...categories].includes(currentCategory))currentCategory='all';const items=currentCategory==='all'?archive:archive.filter(i=>i.category===currentCategory);$('total-count').textContent=archive.length;renderTree();renderRecent(items);renderLatest(items);renderBrowse(items);renderSearch()}
-function setTheme(mode){document.body.classList.toggle('dark',mode==='dark');$('theme-toggle').textContent=mode==='dark'?'Light mode':'Dark mode';localStorage.setItem('kapil-archive-theme',mode)}
-$('theme-toggle').addEventListener('click',()=>setTheme(document.body.classList.contains('dark')?'light':'dark'));
-$('search').addEventListener('input',renderSearch);$('search-form').addEventListener('submit',e=>{e.preventDefault();renderSearch()});
-document.addEventListener('click',e=>{const a=e.target.closest('.tree a');if(!a)return;e.preventDefault();currentCategory=new URL(a.href).searchParams.get('category');history.pushState(null,'',`?category=${currentCategory}`);render()});window.addEventListener('popstate',render);
-setTheme(localStorage.getItem('kapil-archive-theme')||'light');
-fetch('data/archive.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`${r.status} ${r.statusText}`);return r.json()}).then(data=>{archive=Array.isArray(data)?data.filter(i=>i&&i.file&&i.title):[];render()}).catch(err=>{renderTree();$('recently-added').innerHTML=`<p class="error">Could not load /data/archive.json: ${esc(err.message)}.</p>`;$('latest-uploads').innerHTML='<p class="empty">Create /data/archive.json to populate this table.</p>';$('browse-category').innerHTML='<p class="empty">Archive data will appear here after the JSON index loads.</p>'});
-</script>
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <h2 id="about-title">About</h2>
+        <p>A simple, polished introduction section that can grow with more details, achievements, or social links whenever you are ready.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">💡</div><h3>Curious maker</h3><p>I enjoy learning new tools, solving practical problems, and turning small ideas into real web experiences.</p></article>
+        <article class="card"><div class="icon">⚡</div><h3>Fast & focused</h3><p>The site is a single lightweight page with responsive layout, accessible navigation, and no tracking scripts.</p></article>
+        <article class="card"><div class="icon">🌱</div><h3>Always improving</h3><p>Use this space to share new projects, milestones, study notes, or anything else you want people to discover.</p></article>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <h2 id="work-title">Featured work</h2>
+        <p>Starter project cards are included so the website looks complete now and can be edited later with real links.</p>
+      </div>
+      <div class="grid">
+        <article class="card project"><div><div class="icon">🧭</div><h3>Portfolio Website</h3><p>A modern landing page for presenting your profile, work, and contact details with a strong first impression.</p></div><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Responsive</span></div></article>
+        <article class="card project"><div><div class="icon">📚</div><h3>Learning Archive</h3><p>A future home for notes, resources, and useful references collected while building skills.</p></div><div class="tags"><span class="tag">Notes</span><span class="tag">Research</span></div></article>
+        <article class="card project"><div><div class="icon">🚀</div><h3>Next Idea</h3><p>Keep this slot ready for the next app, experiment, or collaboration you want to show visitors.</p></div><div class="tags"><span class="tag">Coming soon</span></div></article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="contact">
+        <div class="eyebrow">Let’s connect</div>
+        <h2 id="contact-title">Have an idea or opportunity?</h2>
+        <p>Update this section with your email, GitHub, LinkedIn, or preferred contact method. For now, it gives visitors a clear place to reach out.</p>
+        <div class="actions" style="justify-content:center"><a class="button primary" href="mailto:hello@kapilkk.uk">Email Kapil</a><a class="button" href="#top">Back to top</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">© <span id="year"></span> Kapil K. Built with care.</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
