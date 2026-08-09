@@ -1,0 +1,3 @@
+import Link from 'next/link';
+const links=['Home','Images','Tools','Projects','Notes','Documents','About'];
+export function Nav(){return <nav className="sticky top-0 z-50 border-b border-archive-line bg-archive-bg/85 backdrop-blur"><div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4"><Link href="/" className="flex items-center gap-3 font-black tracking-tight"><span className="grid size-10 place-items-center rounded-2xl bg-archive-ink text-white">K</span>Kapil Archive</Link><div className="flex flex-wrap justify-end gap-1">{links.map(l=><Link key={l} href={l==='Home'?'/':`/${l.toLowerCase()}`} className="rounded-full px-3 py-2 text-sm font-semibold text-archive-muted hover:bg-white/70 hover:text-archive-ink">{l}</Link>)}</div></div></nav>}
