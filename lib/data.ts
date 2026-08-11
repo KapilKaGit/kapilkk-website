@@ -2,7 +2,7 @@ export const stats = {
   images: 128,
   notes: 42,
   projects: 9,
-  tools: 4,
+  tools: 12,
   documents: 31,
 };
 
@@ -49,6 +49,9 @@ export const tools = [
   'Image Format Converter',
   'Image Compressor',
   'Metadata Viewer',
+  'RGB565 Converter',
+  'Video to ASCII Converter',
+  'Saved Picture Shelf',
 ];
 
 export const projects = [
