@@ -4,6 +4,7 @@ const links = [
   { label: 'Home', href: '/' },
   { label: 'Images', href: '/images' },
   { label: 'Tools', href: '/tools' },
+  { label: 'Track Cam', href: '/track-cam' },
   { label: 'Projects', href: '/projects' },
   { label: 'Notes', href: '/notes' },
   { label: 'Documents', href: '/documents' },
